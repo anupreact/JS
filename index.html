@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<style>
+    .main_style {
+        padding: 1rem;
+        border: 2px solid blue;
+    }
+
+    /* p::before {
+        content: 'Hello';
+        color: blue
+    } */
+
+    .main-heading:hover .main-content {
+        color: "yellow"
+    }
+
+    p.main-content::selection {
+        background: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+    }
+
+
+
+    .container {
+        background: #000;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: start;
+        align-items: auto;
+        align-content: start
+    }
+
+    .item {
+        width: 30%;
+        min-width: 18%;
+        background: rgb(169, 163, 163);
+        flex: 0 0 auto;
+        margin: 10px;
+    }
+</style>
+
+<body>
+
+
+    <div class="container">
+        <div class="item">dsfdsf</div>
+        <div class="item">dsfdsf</div>
+        <div class="item">dsfdsf</div>
+        <div class="item">dsfdsf</div>
+        <div class="item">dsfdsf</div>
+        <div class="item">dsfdsf</div>
+        <div class="item">dsfdsf</div>
+
+    </div>
+
+    <main id="main-container">
+        <h1 class="main-heading">Todays's Special</h1>
+        <p class="main-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum itaque saepe architecto
+            optio doloremque error
+            sint impedit illum quia corporis voluptas sapiente totam enim odit, ab aliquid possimus eius repellat beatae
+            aspernatur similique, perspiciatis, cumque eaque explicabo? Voluptate iusto odit et, dolores enim
+            consequatur libero adipisci reprehenderit soluta. Rem nemo a, libero quia odit eius? Odit dolor ex provident
+            as minus atque aliquid vero impedit magni officia assumenda
+            quam mollitia eius saepe non harum consectetur magnam! Corrupti sapiente, soluta tempore perferendis sequi
+            odit quos dicta praesentium libero, vel eaque, totam aspernatur quia nesciunt iste? Assumenda maiores
+            adipisci nemo eius ipsa magni. Suscipit, nulla necessitatibus ullam dolor error, unde obcaecati quo quis
+            adipisci consequatur, numquam hic maiores aperiam temporibus! Blanditiis iure atque quam voluptatem ipsum
+            amet aperiam voluptatibus accusamus libero veritatis accusantium laborum quasi, saepe repellat molestias, ex
+            neque enim provident quae? Ex eos totam ipsum cupiditate praesentium! Fugiat ipsa, deleniti magni nihil
+            iusto necessitatibus sunt nostrum aut porro pariatur. Earum tenetur eveniet voluptates, assumenda
+            accusantium sequi neque fuga aspernatur veritatis dolor rem?</p>
+    </main>
+    <br>
+    <button onclick=addClass()> Add class</button>
+    <button onclick=removeClass()> Remove class</button>
+
+    <h1 id="heading">Javascript</h1>
+    <h2 id="heading2">React</h2>
+
+    <p id="id">Para with id</p>
+    <p class="class">Para with class</p>
+    <button onclick="xcc()">changing</button>
+
+    <button id="btn">Change</button>
+    <p id="demo"></p>
+
+    <div id="container">
+        <p class="para">Hello Para with ID</p>
+        <span> Hello span </span>
+    </div>
+
+    <section class="h-sec">
+        <div class="intro">
+            <h1>Hello there</h1>
+        </div>
+    </section>
+
+
+    <div class="new">
+        <h1 class="newh1"></h1>
+        <button class="newbtn" onclick=>click me</button>
+    </div>
+
+    <script>
+
+
+
+        // let newd = document.getElementsByClassName("new")
+        // let newh1 = document.getElementsByClassName("newh1")
+        // let newbtn = document.getElementsByClassName("newbtn")
+
+        // newbtn.addEventListener("click",function onClick() {
+        //     console.log("click event")
+
+        // })
+
+
+
+
+        let x = document.getElementById("heading");
+        let x1 = document.getElementById("btn");
+        if ((x.style.color = "red")) {
+            x1.addEventListener("click", function onClick() {
+                x.style.color = "blue";
+            });
+        }
+
+        // document.getElementById("demo").innerHTML = "Hello World";
+
+        const container = document.getElementById("container");
+        const para = document.getElementsByClassName("para");
+        const span = document.getElementsByTagName("span");
+        const section = document.querySelectorAll("section.h-sec");
+
+        let l = document.getElementById("heading");
+        let m = document.getElementById("heading2");
+        l.innerHTML = "change by id";
+        m.innerHTML = "change by class";
+
+        let n = document.querySelectorAll("p#id");
+        let o = document.querySelectorAll("p.class");
+
+        console.log(n);
+        console.log(o);
+
+        function xcc() {
+            n[0].innerHTML = "Para changed with querySelector id";
+            o[0].innerHTML = "Para changed with querySelector class";
+        }
+
+        let f = document.getElementsByTagName("h1");
+        f[1].innerHTML = "Hello There changed";
+
+        // **********************************JAVASCRIPT FREQUENTLY ASKED INTERVIEW QUESTIONS**********************************
+
+
+
+        //********************************************// UNIQUE ELEMENTS FROM THE ARRAY ********************************************//
+        let Array05 = [5, 6, 7, 3, 4, 1, 2, 3, 4, 1]
+        let uniqueArray05 = Array05.filter((elem, index, arr) => arr.indexOf(elem) == index)
+        console.log(uniqueArray05)
+
+        // FIND UNIQUE NUMBERS FROM AN ARRAY
+        let array = [1, 2, 3, 4, 5, 6, 4, 2];
+        let UNIQUE = [];
+        let len = array.length;
+        for (let i = 0; i < len; i++) {
+            if (UNIQUE.indexOf(array[i]) === -1) {
+                UNIQUE.push(array[i]);
+            }
+        }
+        console.log(array);
+        console.log(UNIQUE);
+        console.log(Array.from(new Set(array)));
+
+        // REMOVE DUPLICATE VALUES FROM AN ARRAY
+        let data3 = [1, 2, 3, 4, 5, 3, 2, 7];
+        let unique3 = new Set(data3);
+        console.log([...unique3]);
+        //*********************************************// UNIQUE ELEMENTS FROM THE ARRAY *********************************************/
+
+        let arr = [1, 2, 3, 4, 5];
+
+        // SORT NUMBERS ARRAY
+        let unsortedArray = [32, 12, 45, 31, 2, 5, 6, 8, 21, 33, 0, 6578];
+        const sortedArray = unsortedArray.sort((x, y) => {
+            return x - y;
+        });
+        console.log(sortedArray);
+
+        // CUT THE LENGTH OF AN ARRAY
+        let data = [1, 2, 3, 4, 5, 6];
+        data.length = 3;
+        console.log(data);
+
+        // MAKE A SUM OF ALL THE ARRAY ELEMENTS
+        let data2 = [1, 2, 3, 4, 5, 6];
+        console.log(data2.reduce((x, y) => x + y));
+        console.log(data2);
+
+        // SWAP THE VALUES
+        let x3 = 12;
+        let y3 = 23;
+        [x3, y3] = [y3, x3];
+        console.log(x3, y3);
+
+        // Check whether the value is present in an array or not
+        let numArray = [1, 2, 3, 4, 5, 6];
+        const CheckNum = (num, array) => {
+            let status = "absent";
+            for (let i = 0; i < array.length; i++) {
+                let number = array[i];
+                if (number == num) {
+                    status = "present";
+                    break;
+                }
+            }
+            return status;
+        };
+        console.log(CheckNum(21, numArray));
+
+        // filter multiples of 2 from an array
+        const marray = [1, 2, 3, 4, 5, 6, 7, 8, 12];
+        let s = marray.filter((items) => {
+            return items % 2 == 0;
+        });
+        console.log(s);
+
+        //*************************************** Find the average of numbers***************************************
+        let numinarr = [200, 400, 200, 1200];
+        let sum = 0;
+        let avg;
+        for (let i = 0; i < numinarr.length; i++) {
+            sum = sum + numinarr[i];
+            avg = sum / numinarr.length;
+        }
+        console.log(avg);
+
+        // 
+        let findAverage = (arr) => {
+            let length = numinarr.length
+            let totalIs = numinarr.reduce((x, y) => x + y)
+            return totalIs / length
+        }
+        console.log(findAverage(numinarr))
+
+        //*************************************** Find the average of numbers***************************************
+
+
+
+        // FIND EVEN NUMBERS FROM AN ARRAY
+        const even = arr.filter((item) => {
+            return item % 2 == 0;
+        });
+        console.log("even numbers are", even);
+
+        // FIND ODD NUMBERS FROM AN ARRAY
+        const odd = arr.filter((item) => {
+            return item % 2 !== 0;
+        });
+        console.log("odd numbers are", odd);
+
+
+
+        // FIND DUPLICATE NUMBERS FROM AN ARRAY
+        const duplicate = (arr) => {
+            return arr.filter((items, index) => {
+                return array.indexOf(items) !== index;
+            });
+        };
+        console.log("duplicated values are", duplicate(array));
+
+        // find the factorial of any number
+        let number = 4;
+        let fact = 1;
+        for (i = 1; i <= number; i++) {
+            fact = fact * i; // 
+        }
+        console.log(fact);
+
+        //*********************************************// REVERSE THE ARRAY ELEMENTS*********************************************//
+        let Array04 = [1, 2, 3, 4, 5, 6, "js", "React"];
+
+        // METHOD 1
+        let rArray04 = [];
+        let lenOfArray04 = Array04.length;
+        for (let i = lenOfArray04; i > 0; i--) {
+            rArray04.push(Array04[i - 1]);
+        }   
+        console.log(Array04);
+        console.log(rArray04);
+
+        // METHOD 2
+        let rArray04M2 = Array04.reduceRight((acc, elem) => {
+            acc.push(elem);
+            return acc;
+        }, []);
+        console.log(Array04);
+        console.log(rArray04M2);
+
+        const carray = [1, 2, 3, 4, 5, 6, 7]
+        console.log(carray.reverse())
+
+
+
+        // METHOD 3
+        let rArray04M3 = Array04.reverse()
+        console.log(Array04);
+        console.log(rArray04M3);
+        //*********************************************// REVERSE THE ARRAY ELEMENTS*********************************************//
+
+
+
+
+
+
+
+        //*******************************************FIND MAXIMUM VALUES FROM AN ARRAY ******************************************
+
+        let Array06 = [5, 6, 7, 3, 4, 44, 233, 433, 1, 2, 3, 4, 1]
+
+        let findMaxValue = (arr) => {
+            return arr.reduce((prev, next) => {
+                return prev > next ? prev : next
+                // return prev > next ?  next : prev --------this will return the minimum value
+            })
+        }
+        console.log(findMaxValue(Array06))
+
+        //*******************************************FIND MAXIMUM VALUES FROM AN ARRAY******************************************
+
+        // UPPERCASE THE FIRST LETTER OF EACH ARRAY ELEMENT
+        let days = ["sunday", "monday", "tuesday", "thursday", "friday", "saturday"];
+
+        for (let day of days) {
+            day = day.charAt(0).toUpperCase() + day.substring(1)
+            console.log(day)    
+        }
+
+
+        // CHECK IF A GIVEN ARRAY CONTAINS ANY ELEMENT IN ANOTHER ARRAY
+        let studentIds = [12, 24, 36, 48, 60]
+        let passedIds = [10, 20, 30, 40, 50]
+        let result = studentIds.some(elem => passedIds.includes(elem))
+        console.log(result)
+
+        // ANAGRAM OR NOT
+
+        let str1 = "Cinema"
+        let str2 = "Iceman"
+
+        const checkAnagram = (a, b) => {
+            let al = a.toLowerCase()
+            al = al.split("").sort().join("")
+            let bl = b.toLowerCase()
+            bl = bl.split("").sort().join("")
+
+            return al === bl ? "anagram" : "not an anagram"
+        }
+        console.log(checkAnagram(str1, str2))
+
+
+
+        // HOW TO EXTRACT FEW FIELDS FROM JSON DATA
+        let input = {
+            students: [
+                {
+                    name: "john",
+                    surname: "snow",
+                    email: "snow@gmail.com",
+                    password: "pass123",
+                    id: 1
+                }, {
+                    name: "sansa",
+                    surname: "stark",
+                    email: "sansa@gmail.com",
+                    password: "pass123",
+                    id: 2
+                }, {
+                    name: "tyrion",
+                    surname: "lannister",
+                    email: "tyrion@gmail.com",
+                    password: "pass123",
+                    id: 3
+                }, {
+                    name: "arya",
+                    surname: "stark",
+                    email: "arya@gmail.com",
+                    password: "pass123",
+                    id: 4
+                },
+
+            ]
+        }
+
+        const datas = input.students.map((items, index) => {
+            let loginData = {
+                email: items.email,
+                password: items.password
+            }
+            return loginData
+        })
+        console.log(datas)
+
+
+        // I M P O R T A N T
+        // for (var i = 0; i < 5; i++) {
+        //     setTimeout(() => {
+        //         console.log(i)
+        //     }, i)
+        // }
+        // I M P O R T A N T
+
+        // E S 6 SPECIAL
+
+        // HOW TO CREATE A CLASS IN JAVASCRIPT
+
+        class User {
+            constructor(name, age) {
+                this.name = name
+                this.age = age  
+            }
+            getData() {
+                console.log(`His name is ${this.name} and his age is ${this.age}`)
+            }
+        }
+
+        var username = new User("john", 27)
+        username.getData()
+
+        var user2 = new User("arya", 23)
+        user2.getData()
+
+        // HOW TO CREATE A CLASS IN JAVASCRIPT
+
+
+        // HOW TO CHANGE THE STYLE OF ANY ELEMENT
+
+        let main_container = document.getElementById("main-container");
+        main_container.style.background = ""
+
+        function addClass() {
+            main_container.classList.add("main_style");
+
+        }
+        function removeClass() {
+            main_container.classList.remove("main_style");
+        }
+
+        let main = document.querySelector("#main-container h1");
+        main.style.textAlign = "center"
+
+        console.log(document.querySelectorAll(" #main-container h1"))
+
+
+        // console.log(Navigator.appversion())
+
+
+        // var let and const 
+        // **************************************** V A R   ****************************************
+
+        var variableA = 12
+
+        function newFunction() {
+            variableA = 121212
+            console.log("var inside function " + variableA)
+        }
+
+        console.log("var outside function " + variableA)
+
+        newFunction()
+
+        var variableA = 1212
+
+        console.log("var outside function after function call " + variableA)
+        // **************************************** V A R  ****************************************
+
+
+
+
+        console.log("<br/>")
+        // **************************************** L E T ****************************************
+
+        let variableB = 120
+        function newFunction2() {
+            variableB = 120120
+            console.log("let inside function " + variableB)
+        }
+        console.log("let outside function " + variableB)
+        newFunction2()
+
+        // let variableB = 120120  ----------- cant do this
+
+        variableB = 120120
+        console.log("let outside function after function call " + variableB)
+        // ****************************************  L E T****************************************
+
+
+        console.log("<br/>")
+
+
+
+        // **************************************** C O N S T ****************************************
+
+        const variableC = 122
+        function newFunction3() {
+            // variableC = 122122 ------cant do this as well
+            console.log("const inside function " + variableC)
+        }
+        console.log("const outside function " + variableC)
+        newFunction3()
+
+        // let variableC = 122122 ----------- cant do this
+
+        //  variableC = 122122
+        console.log("const outside function after function call " + variableC)
+
+        // **************************************** C O N S T ****************************************
+
+        xs()
+        function xs() {
+
+
+            // let w = 33
+            console.log(" trying to access VAR before initialization it will give undefined---", vvv)
+            var vvv = 756758
+
+            // lll = 232323232323  this will do the trick if we ommit line no 470
+            // console.log(" trying to access VAR before initialization it will give undefined---", lll) 
+            // // trying to access LET before initialization it will give Reference error , cannot access before initialization
+            // let lll = 756758
+
+            // ccc = 434343
+            // console.log(" trying to access VAR before initialization it will give undefined---", ccc) 
+            // // trying to access CONST before initialization it will give Reference error , cannot access before initialization
+            // // const ccc = 434343
+        }
+
+
+        if (true) {
+            // var w1 = 33
+            // console.log(w1) 
+            var w2 = 33
+            console.log(w2)
+            // const w3 = 33
+            // console.log(w3)
+        }
+        // console.log(w1)
+        console.log(w2)
+        // console.log(w3)
+
+
+        // *************************************CALL , BIND & APPLY*************************************
+
+        let p1 = {
+            name: 'John',
+            power: 55,
+            charge: function (a, b) {
+                this.power = this.power + a + b
+            }
+        }
+        let p2 = {
+            name: 'arya',
+            power: 70,
+        }
+        // p1.charge.call( p2 , 12,13) // Here is the call we can borrow the functions of other objects.
+        // p1.charge.apply( p2 , [22,8]) // Here is the apply only difference is parameters we can pass the array
+        let bindedP = p1.charge.bind(p2, 12, 13) // same as call only difference is it returns a function which we can call later
+        bindedP()
+        console.log(p1)
+        console.log(p2)
+
+
+
+        // CALLBACK EXAMPLE         
+        var callArray = [1, 2, 3, 4, 5];
+        function modifyArray(arr, callback) {
+            // do something to arr here
+            arr.push(100);
+            // then execute the callback function that was passed
+            callback();
+        }
+        modifyArray(callArray, function () {
+            console.log("array has been modified", callArray);
+        });
+        // CALLBACK EXAMPLE
+
+
+        // FOR EACH EXAMPLE
+        const ages = [20, 28, 19, 56];
+        const squares = ages.map((i) => {
+            return i * i
+        })
+
+        console.log(ages)
+        console.log(squares)
+
+        const ages2 = [20, 28, 19, 56];
+        const agesContainer = []
+        ages2.forEach((i) => {
+            agesContainer.push(i * i)
+        })
+        console.log(ages2)
+        console.log(agesContainer)
+
+        var ssss = "name"
+        function ss() {
+            console.log(ssss)
+            var ssss = "new name"
+            console.log(ssss)
+        }
+        ss()
+
+        // DELETE PARTICULAR ELEMENT FROM AM ARRAY
+        let parArray = [12, 13, 14, 15, 16, 22, 33, 44];
+        const deleteA = (arr, x) => {
+            return arr.filter((item, index) => {
+                return item !== x
+            })
+        }
+        console.log(parArray)
+        console.log(deleteA(parArray, 33))
+        // DELETE PARTICULAR ELEMENT FROM AM ARRAY
+
+
+
+        // DELETE MULTIPLE ELEMENTS FROM AN ARRAY
+
+        let arr1 = [100, 200, 300, 400, 500, 600, 700, 800];
+        let val = [100, 200, 300]
+        const delMul = (values, arr) => {
+            return arr.filter(item => !values.includes(item)); // item me se aise values return karo jo values me nahi hai
+        }
+        console.log(delMul(val, arr1))
+
+
+        let arr2 = [100, 200, 300, 400, 500, 600];
+        let values = [200, 400];
+        arr = arr2.filter(item => !values.includes(item));
+        console.log(arr);
+        // DELETE MULTIPLE ELEMENTS FROM AN ARRAY
+
+        // SLICE AND SPLICE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        let slArray = [11, 22, 33, 44, 55, 66, 77, 88]
+        console.log('break')
+        console.log(slArray)
+        console.log("pehele char ---", slArray.slice(0, 4))
+        console.log("pehele char delete karo---", slArray.slice(4))
+
+        let spArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        console.log(spArray.splice(2, 1))
+
+        // IMPORTANT QUESTIONS
+        var funList = []
+        for (var i = 0; i < 5; i++) {
+            funList[i] = function () {
+                console.log("value " + i)
+                console.log(i)
+            }
+        }
+        for (var j = 0; j < 5; j++) {
+            funList[j]()
+        }
+        // value 5
+        // value 5
+        // value 5
+        // value 5
+        // value 5
+
+        // IMPORTANT QUESTIONS
+
+
+
+        class Animal {
+            static belly = [];
+            eat() {
+                Animal.belly.push('food');
+            }
+        }
+        let a = new Animal();
+        a.eat();
+        console.log(Animal.belly[0]); //Prints food
+
+
+        var a22 = ['dog', 'cat', 'hen'];
+        a22[100] = 'fox';
+        console.log(a22.length);
+
+        const dessert = { type: 'pie' };
+        dessert.type = 'pudding';
+        console.log(dessert)
+        console.log(0 && hi)
+
+
+        var start = 1;
+        function setEnd() {
+            var end = 10;
+        }
+        setEnd();
+        // console.log(end);  // end varible ka scope nahi hai bahar - it will give reference error
+        // return null
+
+        function sayHello() {
+            console.log('hello');
+        }
+
+        console.log(sayHello.prototype);
+
+
+
+        const foo = {
+            name: 'Albert',
+        };
+        delete foo.name
+
+        console.log(foo)
+
+
+        //Missing Line
+        var vowels = "aeiou"
+        for (var i = 0; i < vowels.length; i++) {
+            console.log(vowels[i]);
+            //Each letter printed on a separate line as follows;
+            //a
+            //e
+            //i
+            //o
+            //u
+        }
+
+
+        let xz = 6 + 3 + '3';
+        console.log(xz);
+
+
+        let rainForestAcres = 10;
+        let animals = 0;
+
+        while (rainForestAcres < 13 || animals <= 2) {
+            rainForestAcres++;
+            animals += 2;
+        }
+
+        console.log(animals);
+
+        class RainForest {
+            static minimumRainFall = 60;
+        }
+        RainForest.minimumRainFall = 80;
+
+        let congo = new RainForest();
+        console.log(congo.minimumRainFall);
+
+        if (true) {
+            var x33 = 5;
+            //   const y = 6;
+            //   let z = 7;
+        }
+        console.log(x33);
+
+
+
+        let bear = {
+            sound: 'roar',
+            roar() {
+                console.log(this.sound);
+            },
+        };
+
+        bear.sound = 'grunt';
+        let bearSound = bear.roar;
+        bearSound(); // it will give undefined
+
+        var newX = new Object()
+        newX.firstName = "anup"
+        newX.middleName = "budhaghosh"
+        newX.lastName = "manwatkar"
+        newX.age = '12'
+        newX.city = "Nagpur"
+        newX.state = "Maharashtra"
+
+        const nd = Object.keys(newX)
+            .filter((x) => x.includes("Name"))
+            .reduce((obj, key) => {
+                return Object.assign(obj, {
+                    [key]: newX[key]
+                });
+            }, {})
+
+        console.log(nd);
+
+
+        const cd = Object.values(newX)
+            .filter((w) => w.includes("man"))
+        // .reduce((obj , key)=>{
+        //     return Object.assign(obj,{
+        //         newX[key]  : [key]
+        //     })
+        // }, {})
+
+
+
+        console.log(cd)
+
+        // var z1 = { id : 1 , name : "sam" , age:12 , city :"New york"}
+        // console.log(Object.keys(z1))
+        // console.log(Object.values(z1))
+
+
+        // CLOSURES
+        function init() {
+            var name = 'Mozilla';
+            function displayName() {
+                console.log(name);
+            }
+            displayName();
+        }
+        init();
+
+        // CALLBACKS
+
+        // function greeting(name) {
+        //   alert(`Hello, ${name}`);
+        // }
+
+        // function processUserInput(callback) {
+        //   const name = prompt("Please enter your name.");
+        //   callback(name);
+        // }
+
+        // processUserInput(greeting);
+
+        function f1() {
+            var xsxs = 12;
+
+            function f2() {
+                console.log(xsxs)
+            }
+            f2()
+        }
+        f1()
+
+
+        function f11() {
+            console.log("hello ")
+        }
+
+        function f22(callback) {
+            const name11 = "Name inside"
+            callback(name11)
+        }
+        f22(f11);
+
+        console.log("\n-\n");
+        if (true) {
+            let arr = [1, 2, 3, 4, 5, 6, 7, 8]
+
+            console.log("As we can see in below examples , Slice method will not modify the original array")
+
+            console.log(arr)
+            console.log(arr.slice(0, 4), "-------slice(0,4)---first 4")
+
+            console.log("\n-\n")
+            console.log(arr)
+            console.log(arr.slice(4, 6), "-------slice(4,6)---4th and 5th")
+
+            console.log("\n-\n")
+            console.log(arr)
+            console.log(arr.slice(4), "-------slice(4)---last 4")
+
+            console.log("\n-\n")
+            console.log(arr)
+            console.log(arr.slice(-2), "-------slice(-2)---last 2")
+
+            console.log("\n-\n")
+            console.log(arr)
+            console.log(arr.slice(0, -3), "-------slice(0,-3)---remove last 3")
+        }
+
+
+        let users = [
+            { id: 1, name: "John" },
+            { id: 2, name: "Pete" },
+            { id: 3, name: "Mary" },
+            { id: 4, name: "john" },
+        ];
+
+        let user = users.find(item => item.id === 1);
+
+        console.log(user); // John
+
+        // HAving these three below values , calculate the average of their ages
+        let john = { name: "John", age: 25 };
+        let pete = { name: "Pete", age: 30 };
+        let mary = { name: "Mary", age: 29 };
+
+        let newrr = [john , pete , mary]
+
+        console.log((newrr))
+
+        function getAvg(arr){
+            return arr.reduce((prev , user)=> prev + user.age , 0) / arr.length
+        }
+
+        console.log(getAvg(newrr))
+
+
+
+
+
+
+      // INHERITANCE
+      // class car {
+      //     constructor(name, model) {
+      //         this.name = name;
+      //         this.model = model;
+      //     }
+
+      //     start() {
+      //         console.log(this.name, this.model)
+      //     }
+      // }
+
+      // class ElectricCar extends car {
+      //     start() {
+      //         super.start()
+      //     }
+      // }
+
+      // evCar = new ElectricCar('Tesla', 'A234')
+
+      // evCar.start()
+
+      // class Car2 {
+      //     constructor(name,model){
+      //         this.name=name;
+      //         this.model=model;
+      //     }
+      //     start(){
+      //         console.log(this.name , this.model)
+      //     }
+      //     stop(){
+      //         console.log(this.name , "stopped")
+      //     }
+      // }
+      // class ElectricCar2 extends Car2{
+      //     dashboard(){
+      //         console.log("dashboard from child class")
+      //     }
+      //     start(){
+      //         super.start()
+      //         this.dashboard()
+      //     }
+      // }
+
+      // EvCar2 = new ElectricCar2 ("Audi" , "A6")
+      // EvCar2.start()
+      // EvCar2.stop()
+
+      // Evcar3 = new ElectricCar2("BMW" , "A4")
+      // Evcar3.start()
+      // Evcar3.stop()
+
+      // Evcar4 = new ElectricCar2("Toyota" , "Fortuner")
+      // Evcar4.start()
+      // Evcar4.stop()
+
+      // const ValidateValue = "hello"
+      // console.log(!isNaN(ValidateValue))
+
+      // const person = {
+      //     name:"anup"
+      // }
+
+      // // person.name = "Akhil"
+      // // console.log(person)
+
+      // Object.freeze(person);
+      // person.name = "Akhil"
+      // console.log(person)
+    </script>
+</body>
+
+</html>
